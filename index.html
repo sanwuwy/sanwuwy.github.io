@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -96,9 +96,9 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -190,6 +190,36 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -201,9 +231,47 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
   
 </nav>
 
@@ -269,7 +337,19 @@
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-09T21:36:36+08:00">
+                2018-05-09
+              </time>
             
           </span>
 
@@ -281,9 +361,39 @@
 
           
           
+             <span id="/2018/05/09/Markdown语法简介/" class="leancloud_visitors" data-flag-title="Markdown语法简介">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
           
 
           
@@ -303,221 +413,19 @@
       
         
           
-            <p><strong>参考文档：</strong></p>
-<p><strong><a href="https://github.com/revolunet/sublimetext-markdown-preview/blob/master/tests/test.md" target="_blank" rel="noopener">revolunet/sublimetext-markdown-preview</a></strong></p>
-<p><strong><a href="http://www.appinn.com/markdown" target="_blank" rel="noopener">Markdown 语法说明</a></strong></p>
-<p>[TOC]</p>
-<h2 id="Headers-标题"><a href="#Headers-标题" class="headerlink" title="Headers(标题)"></a>Headers(标题)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">以 # 号开头，一般后面会紧随一个空格</span><br><span class="line">一级标题和二级标题下面会带有一条下划线</span><br><span class="line"></span><br><span class="line"># H1</span><br><span class="line">## H2</span><br><span class="line">### H3</span><br><span class="line">#### H4</span><br><span class="line">##### H5</span><br><span class="line">###### H6</span><br><span class="line">### Duplicate Header</span><br><span class="line">### Duplicate Header</span><br></pre></td></tr></table></figure>
-<h1 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h1><h2 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h2><h3 id="H3"><a href="#H3" class="headerlink" title="H3"></a>H3</h3><h4 id="H4"><a href="#H4" class="headerlink" title="H4"></a>H4</h4><h5 id="H5"><a href="#H5" class="headerlink" title="H5"></a>H5</h5><h6 id="H6"><a href="#H6" class="headerlink" title="H6"></a>H6</h6><h3 id="Duplicate-Header"><a href="#Duplicate-Header" class="headerlink" title="Duplicate Header"></a>Duplicate Header</h3><h3 id="Duplicate-Header-1"><a href="#Duplicate-Header-1" class="headerlink" title="Duplicate Header"></a>Duplicate Header</h3><h2 id="Paragraphs-段落"><a href="#Paragraphs-段落" class="headerlink" title="Paragraphs(段落)"></a>Paragraphs(段落)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">跟正常的文本文档一样书写</span><br><span class="line"></span><br><span class="line">This is a paragraph.</span><br><span class="line">I am still part of the paragraph.</span><br><span class="line"></span><br><span class="line">New paragraph.</span><br></pre></td></tr></table></figure>
-<p>This is a paragraph.<br>I am still part of the paragraph.</p>
-<p>New paragraph.</p>
-<h2 id="Inline-行内语法"><a href="#Inline-行内语法" class="headerlink" title="Inline(行内语法)"></a>Inline(行内语法)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">` 号表示行内代码块              相当于html的 &lt;code&gt;</span><br><span class="line">&lt;kbd&gt; 表示键盘文本              相当于html的 &lt;kbd&gt;</span><br><span class="line">*  表示强调内容                 相当于html的 &lt;em&gt;</span><br><span class="line">—  表示强调内容                 相当于html的 &lt;em&gt;</span><br><span class="line">** 表示语气更强的强调内容       相当于html的 &lt;strong&gt;</span><br><span class="line">—— 表示语气更强的强调内容       相当于html的 &lt;strong&gt;</span><br><span class="line">~~ 表示给文本加删除线           相当于html的 &lt;strike&gt;</span><br><span class="line">以上符号可以混合使用</span><br><span class="line"></span><br><span class="line">`inline block`</span><br><span class="line"></span><br><span class="line">&lt;kbd&gt;ctrl&lt;/kbd&gt;+&lt;kbd&gt;alt&lt;/kbd&gt;+&lt;kbd&gt;del&lt;/kbd&gt;</span><br><span class="line"></span><br><span class="line">**bold 1** and __bold 2__</span><br><span class="line"></span><br><span class="line">*italic 1*  and _italic 2_</span><br><span class="line"></span><br><span class="line">~~strike~~</span><br><span class="line"></span><br><span class="line">***bold 1 and italic 1***</span><br><span class="line"></span><br><span class="line">___bold 2 and italic 2___</span><br><span class="line"></span><br><span class="line">__*bold 2 and italic 1*__</span><br><span class="line"></span><br><span class="line">**_bold 1 and italic 2_**</span><br><span class="line"></span><br><span class="line">~~*strike italic 1*~~ and *~~strike italic 2~~*</span><br><span class="line"></span><br><span class="line">~~_strike italic 2_~~ and  _~~strike italic 2~~_</span><br><span class="line"></span><br><span class="line">~~**strike bold 1**~~ and **~~strike bold 1~~**</span><br><span class="line"></span><br><span class="line">~~__strike bold 2__~~ and __~~strike bold 2~~__</span><br><span class="line"></span><br><span class="line">~~***strike italic 1 bold 1***~~ and ***~~strike italic 1 bold 1~~***</span><br><span class="line"></span><br><span class="line">~~___strike italic 2 bold 2___~~ and ___~~strike italic 2 bold 2~~___</span><br><span class="line"></span><br><span class="line">**~~*strike italic 1 bold 1*~~** and *~~**strike italic 1 bold 1**~~*</span><br><span class="line"></span><br><span class="line">__~~_strike italic 2 bold 2_~~__ and _~~__strike italic 2 bold 2__~~_</span><br><span class="line"></span><br><span class="line">**~~_strike italic 2 bold 1_~~** and _~~**strike italic 2 bold 1**~~_</span><br><span class="line"></span><br><span class="line">__~~*strike italic 1 bold 2*~~__ and *~~__strike italic 1 bold 2__~~*</span><br></pre></td></tr></table></figure>
-<p><code>inline block</code></p>
-<p><kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>del</kbd></p>
-<p><strong>bold 1</strong> and <strong>bold 2</strong></p>
-<p><em>italic 1</em>  and <em>italic 2</em></p>
-<p><del>strike</del></p>
-<p><strong><em>bold 1 and italic 1</em></strong></p>
-<p><strong><em>bold 2 and italic 2</em></strong></p>
-<p><strong><em>bold 2 and italic 1</em></strong></p>
-<p><strong><em>bold 1 and italic 2</em></strong></p>
-<p><del><em>strike italic 1</em></del> and <em><del>strike italic 2</del></em></p>
-<p><del><em>strike italic 2</em></del> and <em><del>strike italic 2</del></em></p>
-<p><del><strong>strike bold 1</strong></del> and <strong><del>strike bold 1</del></strong></p>
-<p><del><strong>strike bold 2</strong></del> and <strong><del>strike bold 2</del></strong></p>
-<p><del><strong><em>strike italic 1 bold 1</em></strong></del> and <strong><em><del>strike italic 1 bold 1</del></em></strong></p>
-<p><del><strong><em>strike italic 2 bold 2</em></strong></del> and <strong><em><del>strike italic 2 bold 2</del></em></strong></p>
-<p><strong><del><em>strike italic 1 bold 1</em></del></strong> and <em><del><strong>strike italic 1 bold 1</strong></del></em></p>
-<p><strong><del><em>strike italic 2 bold 2</em></del></strong> and <em><del><strong>strike italic 2 bold 2</strong></del></em></p>
-<p><strong><del><em>strike italic 2 bold 1</em></del></strong> and <em><del><strong>strike italic 2 bold 1</strong></del></em></p>
-<p><strong><del><em>strike italic 1 bold 2</em></del></strong> and <em><del><strong>strike italic 1 bold 2</strong></del></em></p>
-<h2 id="Links-链接"><a href="#Links-链接" class="headerlink" title="Links(链接)"></a>Links(链接)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">Markdown 支持两种形式的链接语法： 行内式和参考式两种形式。</span><br><span class="line">不管是哪一种，链接文字都是用 [方括号] 来标记。</span><br><span class="line"></span><br><span class="line">要建立一个行内式的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可。</span><br><span class="line">如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如：</span><br><span class="line">&gt; This is [an example](http://example.com/ &quot;Title&quot;) inline link.</span><br><span class="line">&gt; [This link](http://example.net/) has no title attribute.</span><br><span class="line"></span><br><span class="line">会产生：</span><br><span class="line">&gt; &lt;p&gt;This is &lt;a href=&quot;http://example.com/&quot; title=&quot;Title&quot;&gt; an example&lt;/a&gt; inline link.&lt;/p&gt;</span><br><span class="line">&gt; &lt;p&gt;&lt;a href=&quot;http://example.net/&quot;&gt;This link&lt;/a&gt; has no title attribute.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">参考式的链接是在链接文字的括号后面再接上另一个方括号，而在第二个方括号里面要填入用以辨识链接的标记：</span><br><span class="line">This is [an example][id] reference-style link.</span><br><span class="line">例如：[Reference Link][1]</span><br><span class="line"></span><br><span class="line">Footnotes[^1] have a label[^label] and a definition[^!DEF]</span><br><span class="line">// 中括号中以 ^ 号开头，表示这是一个注脚</span><br><span class="line"></span><br><span class="line">其中[1] 和 [^1] 都可以在文档的其他地方定义</span><br><span class="line">格式为：[数字]+:+空格+内容</span><br><span class="line">    或  [^数字]+:+空格+内容</span><br><span class="line"></span><br><span class="line">图片链接类似，只是在第一个中括号前面多了一个 ! 号</span><br><span class="line">Web image</span><br><span class="line">![Web Picture](http://www.w3school.com.cn/i/site_photoref.jpg &quot;Web Picture&quot;)</span><br><span class="line">其中中括号的内容，表示在图片加载失败时的替代文字，相当于html中&lt;img&gt;标签中的 alt 属性；</span><br><span class="line">圆括号中双引号中的内容，相当于html中&lt;img&gt;标签中的 title 属性，在鼠标移动到图片上时，会显示该文字</span><br><span class="line"></span><br><span class="line">Local image</span><br><span class="line">![Local Picture](logo-revolunet-carre.jpg &quot;Local Picture&quot;)</span><br><span class="line"></span><br><span class="line">contact@revolunet.com</span><br><span class="line"></span><br><span class="line">https://github.com/revolunet/sublimetext-markdown-preview/</span><br><span class="line"></span><br><span class="line">This is a link https://github.com/revolunet/sublimetext-markdown-preview/.</span><br><span class="line"></span><br><span class="line">This is a link &quot;https://github.com/revolunet/sublimetext-markdown-preview/&quot;.</span><br><span class="line"></span><br><span class="line">With this link (https://github.com/revolunet/sublimetext-markdown-preview/), it still works.</span><br><span class="line"></span><br><span class="line">[1]: https://github.com/revolunet/sublimetext-markdown-preview/</span><br><span class="line">[^1]: This is a footnote</span><br><span class="line">[^label]: A footnote on &quot;label&quot;</span><br><span class="line">[^!DEF]: The footnote for definition</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/revolunet/sublimetext-markdown-preview/" target="_blank" rel="noopener">Reference Link</a></p>
-<p>Footnotes[^1] have a label[^label] and a definition[^!DEF]</p>
-<p>Web image<br><img src="http://www.w3school.com.cn/i/site_photoref.jpg" alt="Web Picture" title="Web Picture"></p>
-<p><a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a></p>
-<p><a href="mailto:contact@revolunet.com" target="_blank" rel="noopener">contact@revolunet.com</a></p>
-<p><a href="https://github.com/revolunet/sublimetext-markdown-preview/" target="_blank" rel="noopener">https://github.com/revolunet/sublimetext-markdown-preview/</a></p>
-<p>This is a link <a href="https://github.com/revolunet/sublimetext-markdown-preview/" target="_blank" rel="noopener">https://github.com/revolunet/sublimetext-markdown-preview/</a>.</p>
-<p>This is a link “<a href="https://github.com/revolunet/sublimetext-markdown-preview/&quot;" target="_blank" rel="noopener">https://github.com/revolunet/sublimetext-markdown-preview/&quot;</a>.</p>
-<p>With this link (<a href="https://github.com/revolunet/sublimetext-markdown-preview/)" target="_blank" rel="noopener">https://github.com/revolunet/sublimetext-markdown-preview/)</a>, it still works.</p>
-<p>[^1]: This is a footnote<br>[^label]: A footnote on “label”<br>[^!DEF]: The footnote for definition</p>
-<h2 id="Abbreviation-缩写"><a href="#Abbreviation-缩写" class="headerlink" title="Abbreviation(缩写)"></a>Abbreviation(缩写)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">The HTML specification </span><br><span class="line">is maintained by the W3C.</span><br><span class="line"></span><br><span class="line">*[HTML]: Hyper Text Markup Language</span><br><span class="line">*[W3C]:  World Wide Web Consortium</span><br></pre></td></tr></table></figure>
-<p>The HTML specification<br>is maintained by the W3C.</p>
-<p><em>[HTML]: Hyper Text Markup Language
-</em>[W3C]:  World Wide Web Consortium</p>
-<h2 id="Unordered-List-无序列表"><a href="#Unordered-List-无序列表" class="headerlink" title="Unordered List(无序列表)"></a>Unordered List(无序列表)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">可以使用 - * + 三种符号中的任意一种</span><br><span class="line">同时要控制好各层级的缩进</span><br><span class="line"></span><br><span class="line">- item 1</span><br><span class="line">    * item A</span><br><span class="line">    * item B</span><br><span class="line">        more text</span><br><span class="line">        + item a</span><br><span class="line">        + item b</span><br><span class="line">        + item c</span><br><span class="line">    * item C</span><br><span class="line">- item 2</span><br><span class="line">- item 3</span><br></pre></td></tr></table></figure>
-<ul>
-<li>item 1<ul>
-<li>item A</li>
-<li>item B<br>  more text<ul>
-<li>item a</li>
-<li>item b</li>
-<li>item c</li>
-</ul>
-</li>
-<li>item C</li>
-</ul>
-</li>
-<li>item 2</li>
-<li>item 3</li>
-</ul>
-<h2 id="Ordered-List-有序列表"><a href="#Ordered-List-有序列表" class="headerlink" title="Ordered List(有序列表)"></a>Ordered List(有序列表)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">使用数字定义，格式为：数字+英文点号+空格+内容</span><br><span class="line">同时要控制好各层级的缩进</span><br><span class="line"></span><br><span class="line">1. item 1</span><br><span class="line">    1. item A</span><br><span class="line">    2. item B</span><br><span class="line">        more text</span><br><span class="line">        1. item a</span><br><span class="line">        2. item b</span><br><span class="line">        3. item c</span><br><span class="line">    3. item C</span><br><span class="line">2. item 2</span><br><span class="line">3. item 3</span><br></pre></td></tr></table></figure>
-<ol>
-<li>item 1<ol>
-<li>item A</li>
-<li>item B<br> more text<ol>
-<li>item a</li>
-<li>item b</li>
-<li>item c</li>
-</ol>
-</li>
-<li>item C</li>
-</ol>
-</li>
-<li>item 2</li>
-<li>item 3</li>
-</ol>
-<h2 id="Task-List-任务列表"><a href="#Task-List-任务列表" class="headerlink" title="Task List(任务列表)"></a>Task List(任务列表)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">格式为：任意一种无序列表符号+空格+[X]+空格+内容</span><br><span class="line">同时要控制好各层级的缩进</span><br><span class="line"></span><br><span class="line">- [X] item 1</span><br><span class="line">    * [X] item A</span><br><span class="line">    * [ ] item B</span><br><span class="line">        more text</span><br><span class="line">        + [x] item a</span><br><span class="line">        + [ ] item b</span><br><span class="line">        + [x] item c</span><br><span class="line">    * [X] item C</span><br><span class="line">- [ ] item 2</span><br><span class="line">- [ ] item 3</span><br></pre></td></tr></table></figure>
-<ul>
-<li>[X] item 1<ul>
-<li>[X] item A</li>
-<li style="list-style: none"><input type="checkbox"> item B<br>  more text<ul>
-<li style="list-style: none"><input type="checkbox" checked> item a</li>
-<li style="list-style: none"><input type="checkbox"> item b</li>
-<li style="list-style: none"><input type="checkbox" checked> item c</li>
-</ul>
-</li>
-<li>[X] item C</li>
-</ul>
-</li>
-<li style="list-style: none"><input type="checkbox"> item 2</li>
-<li style="list-style: none"><input type="checkbox"> item 3</li>
-</ul>
-<h2 id="Mixed-Lists-混合列表"><a href="#Mixed-Lists-混合列表" class="headerlink" title="Mixed Lists(混合列表)"></a>Mixed Lists(混合列表)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">无序列表，有序列表和任务列表可以自由组合</span><br><span class="line">同时要控制好各层级的缩进</span><br><span class="line"></span><br><span class="line">- item 1</span><br><span class="line">    * [X] item A</span><br><span class="line">    * [ ] item B</span><br><span class="line">        more text</span><br><span class="line">        1. item a</span><br><span class="line">        2. itemb</span><br><span class="line">        3. item c</span><br><span class="line">    * [X] item C</span><br><span class="line">- item 2</span><br><span class="line">- item 3</span><br></pre></td></tr></table></figure>
-<ul>
-<li>item 1<ul>
-<li>[X] item A</li>
-<li style="list-style: none"><input type="checkbox"> item B<br>  more text<ol>
-<li>item a</li>
-<li>itemb</li>
-<li>item c</li>
-</ol>
-</li>
-<li>[X] item C</li>
-</ul>
-</li>
-<li>item 2</li>
-<li>item 3</li>
-</ul>
-<h2 id="Dictionary-定义列表"><a href="#Dictionary-定义列表" class="headerlink" title="Dictionary(定义列表)"></a>Dictionary(定义列表)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">最后生成的代码相当于html中的 &lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</span><br><span class="line"></span><br><span class="line">Dictionary</span><br><span class="line">:   item 1</span><br><span class="line">    item 2</span><br><span class="line">    item 3</span><br></pre></td></tr></table></figure>
-<p>Dictionary<br>:   item 1<br>    item 2<br>    item 3</p>
-<h2 id="Blocks-块区"><a href="#Blocks-块区" class="headerlink" title="Blocks(块区)"></a>Blocks(块区)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">通过空格的缩进来创建块区</span><br><span class="line"></span><br><span class="line">    This is a block.</span><br><span class="line">    </span><br><span class="line">    This is more of a block.</span><br></pre></td></tr></table></figure>
-<pre><code>This is a block.
-
-This is more of a block.
-</code></pre><h2 id="Block-Quotes-引用块区"><a href="#Block-Quotes-引用块区" class="headerlink" title="Block Quotes(引用块区)"></a>Block Quotes(引用块区)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">通过 &gt; 或 &gt;&gt; 符号来创建引用块区</span><br><span class="line"></span><br><span class="line">&gt; This is a block quote</span><br><span class="line">&gt;&gt; How does it look?</span><br><span class="line">   I think it looks good.</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>This is a block quote.</p>
-<blockquote>
-<p>How does it look?<br>   I think it looks good.</p>
-</blockquote>
-</blockquote>
-<h2 id="Fenced-Block-语法支持的区块"><a href="#Fenced-Block-语法支持的区块" class="headerlink" title="Fenced Block(语法支持的区块)"></a>Fenced Block(语法支持的区块)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">​```</span><br><span class="line">// Fenced **without** highlighting</span><br><span class="line">function doIt() &#123;</span><br><span class="line">    for (var i = 1; i &lt;= slen ; i^^) &#123;</span><br><span class="line">        setTimeout(&quot;document.z.textdisplay.value = newMake()&quot;, i*300);</span><br><span class="line">        setTimeout(&quot;window.status = newMake()&quot;, i*300);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">​```</span><br><span class="line"></span><br><span class="line">​```javascript</span><br><span class="line">// Fenced **with** highlighting</span><br><span class="line">function doIt() &#123;</span><br><span class="line">    for (var i = 1; i &lt;= slen ; i^^) &#123;</span><br><span class="line">        setTimeout(&quot;document.z.textdisplay.value = newMake()&quot;, i*300);</span><br><span class="line">        setTimeout(&quot;window.status = newMake()&quot;, i*300);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">​```</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Fenced **without** highlighting</span><br><span class="line">function doIt() &#123;</span><br><span class="line">    for (var i = 1; i &lt;= slen ; i^^) &#123;</span><br><span class="line">        setTimeout(&quot;document.z.textdisplay.value = newMake()&quot;, i*300);</span><br><span class="line">        setTimeout(&quot;window.status = newMake()&quot;, i*300);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Fenced **with** highlighting</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doIt</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= slen ; i^^) &#123;</span><br><span class="line">        setTimeout(<span class="string">"document.z.textdisplay.value = newMake()"</span>, i*<span class="number">300</span>);</span><br><span class="line">        setTimeout(<span class="string">"window.status = newMake()"</span>, i*<span class="number">300</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Tables-表格"><a href="#Tables-表格" class="headerlink" title="Tables(表格)"></a>Tables(表格)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">其中每一行的长度最好保持一致</span><br><span class="line">默认情况下： ------------- 表示居左对齐</span><br><span class="line">            :-------------- :表示居中对齐，: 号需紧挨 | 号</span><br><span class="line">             -----------------:表示居右对齐，: 号需紧挨 | 号</span><br><span class="line">表格内可以嵌套行内符号</span><br><span class="line"></span><br><span class="line">| _Colors_      | Fruits          | Vegetable         |</span><br><span class="line">| ------------- |:-------------- :| -----------------:|</span><br><span class="line">| Red           | *Apple*         | [Pepper](#Tables) |</span><br><span class="line">| ~~Orange~~    | Oranges         | **Carrot**        |</span><br><span class="line">| Green         | ~~***Pears***~~ | Spinach           |</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th><em>Colors</em></th>
-<th style="text-align:center">Fruits</th>
-<th style="text-align:right">Vegetable</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Red</td>
-<td style="text-align:center"><em>Apple</em></td>
-<td style="text-align:right">Pepper</td>
-</tr>
-<tr>
-<td><del>Orange</del></td>
-<td style="text-align:center">Oranges</td>
-<td style="text-align:right"><strong>Carrot</strong></td>
-</tr>
-<tr>
-<td>Green</td>
-<td style="text-align:center"><del><strong><em>Pears</em></strong></del></td>
-<td style="text-align:right">Spinach</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Smart-Strong-智能强调"><a href="#Smart-Strong-智能强调" class="headerlink" title="Smart Strong(智能强调)"></a>Smart Strong(智能强调)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">如果 __ 符号没有按照标准书写空格，则表示不需要强调</span><br><span class="line"></span><br><span class="line">Text with double__underscore__words.</span><br><span class="line"></span><br><span class="line">__Strong__ still works.</span><br><span class="line"></span><br><span class="line">__this__works__too__</span><br></pre></td></tr></table></figure>
-<p>Text with double__underscore__words.</p>
-<p><strong>Strong</strong> still works.</p>
-<p><strong>this</strong>works__too__</p>
-<h2 id="Smarty-聪明人"><a href="#Smarty-聪明人" class="headerlink" title="Smarty(聪明人)"></a>Smarty(聪明人)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&quot;double quotes&quot;</span><br><span class="line"></span><br><span class="line">&apos;single quotes&apos;</span><br><span class="line"></span><br><span class="line">da--sh</span><br><span class="line"></span><br><span class="line">elipsis...</span><br></pre></td></tr></table></figure>
-<p>“double quotes”</p>
-<p>‘single quotes’</p>
-<p>da–sh</p>
-<p>elipsis…</p>
-<h2 id="Attribute-List-样式属性定义"><a href="#Attribute-List-样式属性定义" class="headerlink" title="Attribute List(样式属性定义)"></a>Attribute List(样式属性定义)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Normal Text</span><br><span class="line"></span><br><span class="line">Modified Text</span><br><span class="line">&#123;style=&quot;font-weight:bold;font-size:2.5em;&quot;&#125;</span><br></pre></td></tr></table></figure>
-<p>Normal Text</p>
-<p>Modified Text<br>{style=”font-weight:bold;font-size:2.5em;”}</p>
-<h2 id="Admonition-警告"><a href="#Admonition-警告" class="headerlink" title="Admonition(警告)"></a>Admonition(警告)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">其中 !!! Attention、!!! Hint、!!! Caution、!!! Danger、!!! Question、!!! Note是固定组合，后面接内容</span><br><span class="line">需要控制好各层级的缩进</span><br><span class="line"></span><br><span class="line">!!! Attention &quot;Success!&quot;</span><br><span class="line">    You can use inline ~~stuff~~ markup too!</span><br><span class="line"></span><br><span class="line">!!! Hint &quot;Info!&quot;</span><br><span class="line">    - Here is some info.</span><br><span class="line">    - And some more</span><br><span class="line"></span><br><span class="line">!!! Caution &quot;Warning!&quot;</span><br><span class="line">    - [X] Make sure you turn off the stove</span><br><span class="line">    - [X] Don&apos;t run with scissors</span><br><span class="line"></span><br><span class="line">!!! Danger &quot;Alert!&quot;</span><br><span class="line">    You really need to read [this](#admonition)!</span><br><span class="line"></span><br><span class="line">!!! Question &quot;Question?&quot;</span><br><span class="line">    Are you serious?</span><br><span class="line"></span><br><span class="line">!!! Note &quot;Note&quot;</span><br><span class="line">    :smile:</span><br><span class="line"></span><br><span class="line">    &gt; Not all markup can be placed in these boxes, but you can fit all sorts</span><br><span class="line">      of things in them. But you will notice that the styles don&apos;t always play</span><br><span class="line">      nice with each other.  Additional CSS could fix this though.</span><br><span class="line"></span><br><span class="line">    Stuff like _this_ works too.</span><br><span class="line"></span><br><span class="line">    | _Colors_      | Fruits          | Vegetable    |</span><br><span class="line">    | ------------- |:---------------:| ------------:|</span><br><span class="line">    | Red           | *Apple*         | Pepper       |</span><br><span class="line">    | ~~Orange~~    | Oranges         | **Carrot**   |</span><br><span class="line">    | Green         | ~~***Pears***~~ | Spinach      |</span><br><span class="line"></span><br><span class="line">!!! Unknown &quot;Title&quot;</span><br><span class="line">    Default class style</span><br></pre></td></tr></table></figure>
-<p>!!! Attention “Success!”<br>    You can use inline <del>stuff</del> markup too!</p>
-<p>!!! Hint “Info!”</p>
-<pre><code>- Here is some info.
-- And some more
-</code></pre><p>!!! Caution “Warning!”</p>
-<pre><code>- [X] Make sure you turn off the stove
-- [X] Don&apos;t run with scissors
-</code></pre><p>!!! Danger “Alert!”<br>    You really need to read <a href="#admonition">this</a>!</p>
-<p>!!! Question “Question?”<br>    Are you serious?</p>
-<p>!!! Note “Note”<br>    :smile:</p>
-<pre><code>&gt; Not all markup can be placed in these boxes, but you can fit all sorts
-  of things in them. But you will notice that the styles don&apos;t always play
-  nice with each other.  Additional CSS could fix this though.
-
-Stuff like _this_ works too.
-
-| _Colors_      | Fruits          | Vegetable    |
-| ------------- |:---------------:| ------------:|
-| Red           | *Apple*         | Pepper       |
-| ~~Orange~~    | Oranges         | **Carrot**   |
-| Green         | ~~***Pears***~~ | Spinach      |
-</code></pre><p>!!! Unknown “Title”<br>    Default class style</p>
-<h2 id="Github-Emoji-Github表情包"><a href="#Github-Emoji-Github表情包" class="headerlink" title="Github Emoji(Github表情包)"></a>Github Emoji(Github表情包)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is a test for emoji :smile:.  The emojis are images linked to github assets :octocat:.</span><br></pre></td></tr></table></figure>
-<h3 id="People"><a href="#People" class="headerlink" title="People"></a>People</h3><p>:+1::-1::alien::angel::anger::angry::anguished::astonished::baby::blue_heart::blush::boom::bow::bowtie::boy::bride_with_veil::broken_heart::bust_in_silhouette::busts_in_silhouette::clap::cold_sweat::collision::confounded::confused::construction_worker::cop::couple::couple_with_heart::couplekiss::cry::crying_cat_face::cupid::dancer::dancers::dash::disappointed::disappointed_relieved::dizzy::dizzy_face::droplet::ear::exclamation::expressionless::eyes::facepunch::family::fearful::feelsgood::feet::finnadie::fire::fist::flushed::frowning::fu::girl::goberserk::godmode::green_heart::grey_exclamation::grey_question::grimacing::grin::grinning::guardsman::haircut::hand::hankey::hear_no_evil::heart::heart_eyes::heart_eyes_cat::heartbeat::heartpulse::hurtrealbad::hushed::imp::information_desk_person::innocent::japanese_goblin::japanese_ogre::joy::joy_cat::kiss::kissing::kissing_cat::kissing_closed_eyes::kissing_heart::kissing_smiling_eyes::laughing::lips::love_letter::man::man_with_gua_pi_mao::man_with_turban::mask::massage::metal::muscle::musical_note::nail_care::neckbeard::neutral_face::no_good::no_mouth::nose::notes::ok_hand::ok_woman::older_man::older_woman::open_hands::open_mouth::pensive::persevere::person_frowning::person_with_blond_hair::person_with_pouting_face::point_down::point_left::point_right::point_up::point_up_2::poop::pouting_cat::pray::princess::punch::purple_heart::question::rage::rage1::rage2::rage3::rage4::raised_hand::raised_hands::raising_hand::relaxed::relieved::revolving_hearts::runner::running::satisfied::scream::scream_cat::see_no_evil::shit::skull::sleeping::sleepy::smile::smile_cat::smiley::smiley_cat::smiling_imp::smirk::smirk_cat::sob::sparkles::sparkling_heart::speak_no_evil::speech_balloon::star::star2::stuck_out_tongue::stuck_out_tongue_closed_eyes::stuck_out_tongue_winking_eye::sunglasses::suspect::sweat::sweat_drops::sweat_smile::thought_balloon::thumbsdown::thumbsup::tired_face::tongue::triumph::trollface::two_hearts::two_men_holding_hands::two_women_holding_hands::unamused::v::walking::wave::weary::wink::woman::worried::yellow_heart::yum::zzz:</p>
-<h3 id="Nature"><a href="#Nature" class="headerlink" title="Nature"></a>Nature</h3><p>:ant::baby_chick::bear::bee::beetle::bird::blossom::blowfish::boar::bouquet::bug::cactus::camel::cat::cat2::cherry_blossom::chestnut::chicken::cloud::cow::cow2::crescent_moon::crocodile::cyclone::deciduous_tree::dog::dog2::dolphin::dragon::dragon_face::dromedary_camel::ear_of_rice::earth_africa::earth_americas::earth_asia::elephant::evergreen_tree::fallen_leaf::first_quarter_moon::first_quarter_moon_with_face::fish::foggy::four_leaf_clover::frog::full_moon::full_moon_with_face::globe_with_meridians::goat::hamster::hatched_chick::hatching_chick::herb::hibiscus::honeybee::horse::koala::last_quarter_moon::last_quarter_moon_with_face::leaves::leopard::maple_leaf::milky_way::monkey::monkey_face::moon::mouse::mouse2::mushroom::new_moon::new_moon_with_face::night_with_stars::ocean::octocat::octopus::ox::palm_tree::panda_face::partly_sunny::paw_prints::penguin::pig::pig2::pig_nose::poodle::rabbit::rabbit2::racehorse::ram::rat::rooster::rose::seedling::sheep::shell::snail::snake::snowflake::snowman::squirrel::sun_with_face::sunflower::sunny::tiger::tiger2::tropical_fish::tulip::turtle::umbrella::volcano::waning_crescent_moon::waning_gibbous_moon::water_buffalo::waxing_crescent_moon::waxing_gibbous_moon::whale::whale2::wolf::zap:</p>
-<h3 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h3><p>:8ball::alarm_clock::apple::art::athletic_shoe::baby_bottle::balloon::bamboo::banana::bar_chart::baseball::basketball::bath::bathtub::battery::beer::beers::bell::bento::bicyclist::bikini::birthday::black_joker::black_nib::blue_book::bomb::book::bookmark::bookmark_tabs::books::boot::bowling::bread::briefcase::bulb::cake::calendar::calling::camera::candy::card_index::cd::chart_with_downwards_trend::chart_with_upwards_trend::cherries::chocolate_bar::christmas_tree::clapper::clipboard::closed_book::closed_lock_with_key::closed_umbrella::clubs::cocktail::coffee::computer::confetti_ball::cookie::corn::credit_card::crown::crystal_ball::curry::custard::dango::dart::date::diamonds::dollar::dolls::door::doughnut::dress::dvd::e-mail::egg::eggplant::electric_plug::email::envelope::envelope_with_arrow::euro::eyeglasses::fax::file_folder::fireworks::fish_cake::fishing_pole_and_fish::flags::flashlight::flipper::floppy_disk::flower_playing_cards::football::footprints::fork_and_knife::fried_shrimp::fries::game_die::gem::ghost::gift::gift_heart::golf::grapes::green_apple::green_book::guitar::gun::hamburger::hammer::handbag::headphones::hearts::high_brightness::high_heel::hocho::honey_pot::horse_racing::hourglass::hourglass_flowing_sand::ice_cream::icecream::inbox_tray::incoming_envelope::iphone::jack_o_lantern::jeans::key::kimono::lantern::ledger::lemon::lipstick::lock::lock_with_ink_pen::lollipop::loop::loud_sound::loudspeaker::low_brightness::mag::mag_right::mahjong::mailbox::mailbox_closed::mailbox_with_mail::mailbox_with_no_mail::mans_shoe::meat_on_bone::mega::melon::memo::microphone::microscope::minidisc::money_with_wings::moneybag::mortar_board::mountain_bicyclist::movie_camera::musical_keyboard::musical_score::mute::name_badge::necktie::newspaper::no_bell::notebook::notebook_with_decorative_cover::nut_and_bolt::oden::open_book::open_file_folder::orange_book::outbox_tray::package::page_facing_up::page_with_curl::pager::paperclip::peach::pear::pencil::pencil2::phone::pill::pineapple::pizza::postal_horn::postbox::pouch::poultry_leg::pound::purse::pushpin::radio::ramen::ribbon::rice::rice_ball::rice_cracker::rice_scene::ring::rugby_football::running_shirt_with_sash::sake::sandal::santa::satellite::saxophone::school_satchel::scissors::scroll::seat::shaved_ice::shirt::shoe::shower::ski::smoking::snowboarder::soccer::sound::space_invader::spades::spaghetti::sparkle::sparkler::speaker::stew::straight_ruler::strawberry::surfer::sushi::sweet_potato::swimmer::syringe::tada::tanabata_tree::tangerine::tea::telephone::telephone_receiver::telescope::tennis::toilet::tomato::tophat::triangular_ruler::trophy::tropical_drink::trumpet::tshirt::tv::unlock::vhs::video_camera::video_game::violin::watch::watermelon::wind_chime::wine_glass::womans_clothes::womans_hat::wrench::yen:</p>
-<h3 id="Places"><a href="#Places" class="headerlink" title="Places"></a>Places</h3><p>:aerial_tramway::airplane::ambulance::anchor::articulated_lorry::atm::bank::barber::beginner::bike::blue_car::boat::bridge_at_night::bullettrain_front::bullettrain_side::bus::busstop::car::carousel_horse::checkered_flag::church::circus_tent::city_sunrise::city_sunset::cn::construction::convenience_store::crossed_flags::de::department_store::es::european_castle::european_post_office::factory::ferris_wheel::fire_engine::fountain::fr::fuelpump::gb::helicopter::hospital::hotel::hotsprings::house::house_with_garden::it::izakaya_lantern::japan::japanese_castle::jp::kr::light_rail::love_hotel::minibus::monorail::mount_fuji::mountain_cableway::mountain_railway::moyai::office::oncoming_automobile::oncoming_bus::oncoming_police_car::oncoming_taxi::performing_arts::police_car::post_office::railway_car::rainbow::red_car::rocket::roller_coaster::rotating_light::round_pushpin::rowboat::ru::sailboat::school::ship::slot_machine::speedboat::stars::station::statue_of_liberty::steam_locomotive::sunrise::sunrise_over_mountains::suspension_railway::taxi::tent::ticket::tokyo_tower::tractor::traffic_light::train::train2::tram::triangular_flag_on_post::trolleybus::truck::uk::us::vertical_traffic_light::warning::wedding:</p>
-<h3 id="Symbols"><a href="#Symbols" class="headerlink" title="Symbols"></a>Symbols</h3><p>:100::1234::a::ab::abc::abcd::accept::aquarius::aries::arrow_backward::arrow_double_down::arrow_double_up::arrow_down::arrow_down_small::arrow_forward::arrow_heading_down::arrow_heading_up::arrow_left::arrow_lower_left::arrow_lower_right::arrow_right::arrow_right_hook::arrow_up::arrow_up_down::arrow_up_small::arrow_upper_left::arrow_upper_right::arrows_clockwise::arrows_counterclockwise::b::baby_symbol::back::baggage_claim::ballot_box_with_check::bangbang::black_circle::black_large_square::black_medium_small_square::black_medium_square::black_small_square::black_square_button::cancer::capital_abcd::capricorn::chart::children_crossing::cinema::cl::clock1::clock10::clock1030::clock11::clock1130::clock12::clock1230::clock130::clock2::clock230::clock3::clock330::clock4::clock430::clock5::clock530::clock6::clock630::clock7::clock730::clock8::clock830::clock9::clock930::congratulations::cool::copyright::curly_loop::currency_exchange::customs::diamond_shape_with_a_dot_inside::do_not_litter::eight::eight_pointed_black_star::eight_spoked_asterisk::end::fast_forward::five::four::free::gemini::hash::heart_decoration::heavy_check_mark::heavy_division_sign::heavy_dollar_sign::heavy_exclamation_mark::heavy_minus_sign::heavy_multiplication_x::heavy_plus_sign::id::ideograph_advantage::information_source::interrobang::keycap_ten::koko::large_blue_circle::large_blue_diamond::large_orange_diamond::left_luggage::left_right_arrow::leftwards_arrow_with_hook::leo::libra::link::m::mens::metro::mobile_phone_off::negative_squared_cross_mark::new::ng::nine::no_bicycles::no_entry::no_entry_sign::no_mobile_phones::no_pedestrians::no_smoking::non-potable_water::o::o2::ok::on::one::ophiuchus::parking::part_alternation_mark::passport_control::pisces::potable_water::put_litter_in_its_place::radio_button::recycle::red_circle::registered::repeat::repeat_one::restroom::rewind::sa::sagittarius::scorpius::secret::seven::shipit::signal_strength::six::six_pointed_star::small_blue_diamond::small_orange_diamond::small_red_triangle::small_red_triangle_down::soon::sos::symbols::taurus::three::tm::top::trident::twisted_rightwards_arrows::two::u5272::u5408::u55b6::u6307::u6708::u6709::u6e80::u7121::u7533::u7981::u7a7a::underage::up::vibration_mode::virgo::vs::wavy_dash::wc::wheelchair::white_check_mark::white_circle::white_flower::white_large_square::white_medium_small_square::white_medium_square::white_small_square::white_square_button::womens::x::zero:</p>
-<h2 id="Neseted-Fences-嵌套区块"><a href="#Neseted-Fences-嵌套区块" class="headerlink" title="Neseted Fences(嵌套区块)"></a>Neseted Fences(嵌套区块)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">    ```</span><br><span class="line">    This will still be parsed</span><br><span class="line">    as a normal indented code block.</span><br><span class="line">    ```</span><br><span class="line"></span><br><span class="line">​```</span><br><span class="line">This will still be parsed</span><br><span class="line">as a fenced code block.</span><br><span class="line">​```</span><br><span class="line"></span><br><span class="line">- This is a list that contains multiple code blocks.</span><br><span class="line"></span><br><span class="line">    - Here is an indented block</span><br><span class="line"></span><br><span class="line">            ```</span><br><span class="line">            This will still be parsed</span><br><span class="line">            as a normal indented code block.</span><br><span class="line">            ```</span><br><span class="line"></span><br><span class="line">    - Here is a fenced code block:</span><br><span class="line"></span><br><span class="line">        ```</span><br><span class="line">        This will still be parsed</span><br><span class="line">        as a fenced code block.</span><br><span class="line">        ```</span><br><span class="line"></span><br><span class="line">        &gt; ```</span><br><span class="line">        &gt; Blockquotes?</span><br><span class="line">        &gt; Not a problem!</span><br><span class="line">        &gt; ```</span><br></pre></td></tr></table></figure>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">This will still be parsed</span><br><span class="line">as a normal indented code block.</span><br></pre></td></tr></table></figure>
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">This will still be parsed</span><br><span class="line">as a fenced code block.</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>This is a list that contains multiple code blocks.</p>
-<ul>
-<li><p>Here is an indented block</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">This will still be parsed</span><br><span class="line">as a normal indented code block.</span><br></pre></td></tr></table></figure>
-</code></pre></li>
-<li><p>Here is a fenced code block:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">This will still be parsed</span><br><span class="line">as a fenced code block.</span><br></pre></td></tr></table></figure>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; Blockquotes?</span><br><span class="line">&gt; Not a problem!</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="UML-Flow-Charts-UML流程图"><a href="#UML-Flow-Charts-UML流程图" class="headerlink" title="UML Flow Charts(UML流程图)"></a>UML Flow Charts(UML流程图)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">需要在sublime text3中安装Markdown Preview插件，同时开启对于 uml 的支持。</span><br><span class="line">方法如下：1. 安装Markdown Preview</span><br><span class="line">          2. 打开 Sublime的 Perferences -&gt; Package Settings -&gt; Markdown Preview -&gt; Setting - User，输入：&#123;&quot;enable_uml&quot;: true,&#125;</span><br><span class="line"></span><br><span class="line">​```flow</span><br><span class="line">st=&gt;start: Start:&gt;http://www.google.com[blank]</span><br><span class="line">e=&gt;end:&gt;http://www.google.com</span><br><span class="line">op1=&gt;operation: My Operation</span><br><span class="line">sub1=&gt;subroutine: My Subroutine</span><br><span class="line">cond=&gt;condition: Yes</span><br><span class="line">or No?:&gt;http://www.google.com</span><br><span class="line">io=&gt;inputoutput: catch something...</span><br><span class="line"></span><br><span class="line">st-&gt;op1-&gt;cond</span><br><span class="line">cond(yes)-&gt;io-&gt;e</span><br><span class="line">cond(no)-&gt;sub1(right)-&gt;op1</span><br><span class="line">​```</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: Start:&gt;http://www.google.com[blank]</span><br><span class="line">e=&gt;end:&gt;http://www.google.com</span><br><span class="line">op1=&gt;operation: My Operation</span><br><span class="line">sub1=&gt;subroutine: My Subroutine</span><br><span class="line">cond=&gt;condition: Yes</span><br><span class="line">or No?:&gt;http://www.google.com</span><br><span class="line">io=&gt;inputoutput: catch something...</span><br><span class="line"></span><br><span class="line">st-&gt;op1-&gt;cond</span><br><span class="line">cond(yes)-&gt;io-&gt;e</span><br><span class="line">cond(no)-&gt;sub1(right)-&gt;op1</span><br></pre></td></tr></table></figure>
-<h2 id="UML-Sequence-Diagrams-UML时序图"><a href="#UML-Sequence-Diagrams-UML时序图" class="headerlink" title="UML Sequence Diagrams(UML时序图)"></a>UML Sequence Diagrams(UML时序图)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">​```sequence</span><br><span class="line">Title: Here is a title</span><br><span class="line">A-&gt;B: Normal line</span><br><span class="line">B--&gt;C: Dashed line</span><br><span class="line">C-&gt;&gt;D: Open arrow</span><br><span class="line">D--&gt;&gt;A: Dashed open arrow</span><br><span class="line">​```</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Title: Here is a title</span><br><span class="line">A-&gt;B: Normal line</span><br><span class="line">B--&gt;C: Dashed line</span><br><span class="line">C-&gt;&gt;D: Open arrow</span><br><span class="line">D--&gt;&gt;A: Dashed open arrow</span><br></pre></td></tr></table></figure>
-
-          
+          参考文档：
+revolunet/sublimetext-markdown-preview
+Markdown 语法说明
+[TOC]
+Headers(标题)1234567891011以 # 号开头，一般后面会紧随一个空格一级标题和二级标题下面会带有一条下划线# H1## H2### H3#### H4#
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/09/Markdown语法简介/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -601,7 +509,19 @@ Stuff like _this_ works too.
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-04-26T17:32:54+08:00">
+                2017-04-26
+              </time>
             
           </span>
 
@@ -613,9 +533,39 @@ Stuff like _this_ works too.
 
           
           
+             <span id="/2017/04/26/Android命名规范/" class="leancloud_visitors" data-flag-title="Android命名规范">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
           
 
           
@@ -635,544 +585,22 @@ Stuff like _this_ works too.
       
         
           
-            <style type="text/css">
+          
     th {
         text-align:center;
     }
-</style>
 
-<h1 id="Android-命名规范"><a href="#Android-命名规范" class="headerlink" title="Android 命名规范"></a>Android 命名规范</h1><h3 id="1-标识符通用的规则"><a href="#1-标识符通用的规则" class="headerlink" title="1.  标识符通用的规则"></a>1.  标识符通用的规则</h3><h4 id="标识符命名法主要有四种"><a href="#标识符命名法主要有四种" class="headerlink" title="标识符命名法主要有四种:"></a>标识符命名法主要有四种:</h4><blockquote>
-<p>1) Camel(骆驼)命名法：除首单词外，其余所有单词的第一个字母大写，如：fooBar;<br>2) Pascal命名法:所有单词的第一个字母大写，如：FooBar；<br>3) 下划线命名法:单词与单词间用下划线做间隔，如：foo_bar;<br>4) 匈牙利命名法:广泛应用于微软编程环境中，在以Pascal命名法的变量，首字母小写说明该变量的类型。 变量的取名方式为：scope_ prefix_qualifier 范围前缀，类型前缀，限定词,如: g_foo_bar (“g_”表示全局变量);<br>注：安卓App层开发主要是Java语言，所以使用的是前三种命名方式。</p>
-</blockquote>
-<h3 id="2-包名"><a href="#2-包名" class="headerlink" title="2.  包名"></a>2.  包名</h3><p>包名采用反域名命名规则，全部使用小写字母。<br>一级包名为com，二级包名为xx（可以是公司或则个人的随便），三级包名根据应用进行命名，四级包名为模块名或层级名。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">包名</th>
-<th style="text-align:left">此包中包含</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">com.xx.应用名称缩写.ui.activity</td>
-<td style="text-align:left">页面用到的XxxActivity类</td>
-</tr>
-<tr>
-<td style="text-align:left">com.xx.应用名称缩写.ui.fragment</td>
-<td style="text-align:left">页面用到的XxxFragment类</td>
-</tr>
-<tr>
-<td style="text-align:left">com.xx.应用名称缩写.ui.contract</td>
-<td style="text-align:left">MVP中V和P抽取出来的接口都放在contract包下的XxxContract类中</td>
-</tr>
-<tr>
-<td style="text-align:left">com.xx.应用名称缩写.ui.presenter</td>
-<td style="text-align:left">MVP中P的实现都放在presenter包下的XxxPresenter类中</td>
-</tr>
-<tr>
-<td style="text-align:left">com.xx.应用名称缩写.net</td>
-<td style="text-align:left">MVP中的Module抽取出来的接口都都放在net包下的XxxModule类中，Module的实现都放在net包下的XxxModuleImpl类中</td>
-</tr>
-<tr>
-<td style="text-align:left">com.xx.应用名称缩写.base</td>
-<td style="text-align:left">基础共享的类</td>
-</tr>
-<tr>
-<td style="text-align:left">com.xx.应用名称缩写.adapter</td>
-<td style="text-align:left">页面用到的Adapter类 (适配器的类)</td>
-</tr>
-<tr>
-<td style="text-align:left">com.xx.应用名称缩写.util</td>
-<td style="text-align:left">此包中包含：公共工具方法类（util模块名）</td>
-</tr>
-<tr>
-<td style="text-align:left">com.xx.应用名称缩写.bean</td>
-<td style="text-align:left">下面可分：vo、po、dto 此包中包含：JavaBean类</td>
-</tr>
-<tr>
-<td style="text-align:left">com.xx.应用名称缩写.model</td>
-<td style="text-align:left">此包中包含：模型类</td>
-</tr>
-<tr>
-<td style="text-align:left">com.xx.应用名称缩写.db</td>
-<td style="text-align:left">数据库操作类</td>
-</tr>
-<tr>
-<td style="text-align:left">com.xx.应用名称缩写.view</td>
-<td style="text-align:left">自定义的View类等</td>
-</tr>
-<tr>
-<td style="text-align:left">com.xx.应用名称缩写.service</td>
-<td style="text-align:left">Service服务</td>
-</tr>
-<tr>
-<td style="text-align:left">com.xx.应用名称缩写.receiver</td>
-<td style="text-align:left">BroadcastReceiver服务</td>
-</tr>
-</tbody>
-</table>
-<h3 id="3-类名"><a href="#3-类名" class="headerlink" title="3.  类名"></a>3.  类名</h3><p>类名都以Pascal风格编写。<br>类名通常是名词或名词短语，接口名称有时可能是形容词或形容词短语。现在还没有特定的规则或行之有效的约定来命名注解类型。<br>名词，采用Pascal命名法，尽量避免缩写，除非该缩写是众所周知的， 比如HTML,URL，如果类名称中包含单词缩写，则单词缩写的每个字母均应大写。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">类</th>
-<th style="text-align:left">描述</th>
-<th style="text-align:left">例如</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Activity类</td>
-<td style="text-align:left">Activity为后缀标识</td>
-<td style="text-align:left">欢迎页面类WelcomeActivity</td>
-</tr>
-<tr>
-<td style="text-align:left">Adapter类</td>
-<td style="text-align:left">Adapter 为后缀标识</td>
-<td style="text-align:left">新闻详情适配器 NewDetailAdapter</td>
-</tr>
-<tr>
-<td style="text-align:left">解析类</td>
-<td style="text-align:left">Parser为后缀标识</td>
-<td style="text-align:left">首页解析类HomePosterParser</td>
-</tr>
-<tr>
-<td style="text-align:left">工具方法类</td>
-<td style="text-align:left">Util或Manager为后缀标识（与系统或第三方的Utils区分）或功能+Util</td>
-<td style="text-align:left">线程池管理类：ThreadPoolManager <br>日志工具类：LogUtil（Logger也可） <br>打印工具类：PrinterUtil</td>
-</tr>
-<tr>
-<td style="text-align:left">数据库类</td>
-<td style="text-align:left">以DBHelper后缀标识</td>
-<td style="text-align:left">新闻数据库：NewDBHelper</td>
-</tr>
-<tr>
-<td style="text-align:left">Service类</td>
-<td style="text-align:left">以Service为后缀标识</td>
-<td style="text-align:left">时间服务TimeService</td>
-</tr>
-<tr>
-<td style="text-align:left">Receiver类</td>
-<td style="text-align:left">以Receiver为后缀标识</td>
-<td style="text-align:left">推送接收JPushReceiver</td>
-</tr>
-<tr>
-<td style="text-align:left">ContentProvider</td>
-<td style="text-align:left">以Provider为后缀标识</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">事件监听类</td>
-<td style="text-align:left">以On开头，Listener为后缀标识</td>
-<td style="text-align:left">OnItemClickListener</td>
-</tr>
-<tr>
-<td style="text-align:left">自定义的共享基础类</td>
-<td style="text-align:left">以Base开头 BaseActivity,BaseFragment</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>测试类的命名以它要测试的类的名称开始，以Test结束。<br>例如：HashTest 或 HashIntegrationTest。</p>
-<p>接口（interface）：命名规则与类一样采用大驼峰命名法，多以able或ible结尾，如<br>interface Runnable ;<br>interface Accessible。<br>注意：如果项目采用MVP，采用包名中的规则定义类名</p>
-</blockquote>
-<h3 id="4-方法名"><a href="#4-方法名" class="headerlink" title="4.  方法名"></a>4.  方法名</h3><p>方法名都以 Camel 风格编写。<br>方法名通常是动词或动词短语。</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>initXxx()</td>
-<td>初始化相关方法,使用init为前缀标识，如初始化布局initView()</td>
-</tr>
-<tr>
-<td>isXxx() / checkXxx()</td>
-<td>方法返回值为boolean型的请使用is或check为前缀标识</td>
-</tr>
-<tr>
-<td>getXxx()</td>
-<td>返回某个值的方法，使用get为前缀标识</td>
-</tr>
-<tr>
-<td>handleXxx()</td>
-<td>对数据进行处理的方法，尽量使用handle为前缀标识</td>
-</tr>
-<tr>
-<td>displayXxx() / showXxx()</td>
-<td>弹出提示框和提示信息，使用display/show为前缀标识</td>
-</tr>
-<tr>
-<td>saveXxx()</td>
-<td>与保存数据相关的，使用save为前缀标识</td>
-</tr>
-<tr>
-<td>resetXxx()</td>
-<td>对数据重组的，使用reset前缀标识</td>
-</tr>
-<tr>
-<td>clearXxx()</td>
-<td>清除数据相关的</td>
-</tr>
-<tr>
-<td>removeXxx()</td>
-<td>清除数据相关的</td>
-</tr>
-<tr>
-<td>drawXxx()</td>
-<td>绘制数据或效果相关的，使用draw前缀标识</td>
-</tr>
-</tbody>
-</table>
-<h3 id="5-常量名"><a href="#5-常量名" class="headerlink" title="5.  常量名"></a>5.  常量名</h3><p>常量名命名模式为：CONSTANT_CASE，全部字母大写，用下划线分隔单词。</p>
-<p>这些名字通常是名词或名词短语。</p>
-<h3 id="6-非常量字段名"><a href="#6-非常量字段名" class="headerlink" title="6.  非常量字段名"></a>6.  非常量字段名</h3><p>非常量字段名以Camel风格的基础上改造为如下风格：<br>基本结构为scopeVariableNameType。</p>
-<p><strong>scope：范围</strong><br>非公有，非静态字段命名以m开头。<br>静态字段命名以s开头。<br>公有非静态字段命名以p开头。<br>公有静态字段（全局变量）命名以g开头。<br>public static final 字段(常量) 全部大写，并用下划线连起来。<br>例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;  </span><br><span class="line">      <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SOME_CONSTANT = <span class="number">42</span>;  </span><br><span class="line">      <span class="keyword">public</span> <span class="keyword">int</span> pField;  </span><br><span class="line">      <span class="keyword">private</span> <span class="keyword">static</span> MyClass sSingleton;  </span><br><span class="line">      <span class="keyword">int</span> mPackagePrivate;  </span><br><span class="line">      <span class="keyword">private</span> <span class="keyword">int</span> mPrivate;  </span><br><span class="line">      <span class="keyword">protected</span> <span class="keyword">int</span> mProtected; </span><br><span class="line">      <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> gField; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>使用1个字符前缀来表示作用范围，表示作用范围的前缀必须小写，前缀后面是由表意性强的一个单词或多个单词组成的名字，而且每个单词的首写字母大写，其它字母小写，这样保证了对变量名能够进行正确的断句。</p>
-<p><strong>Type：类型</strong><br>考虑到Android中使用很多UI控件，为避免控件和普通成员变量混淆以及更好达意，所有用来表示控件的成员变量统一加上控件缩写作为后缀（文末附有缩写表），对于普通变量一般不添加类型后缀<br>通过在结尾处放置一个量词，就可以创建更加统一的变量，它们更容易理解，也更容易搜索。</p>
-<blockquote>
-<p>注意：如果项目中使用ButterKnife，则不添加m前缀，以Camel风格命名。</p>
-</blockquote>
-<p>例如，请使用 mCustomerStrFirst 和 mCustomerStrLast，而不要使用mFirstCustomerStr和mLastCustomerStr。</p>
-<blockquote>
-<p>量词列表：量词后缀说明<br>First 一组变量中的第一个<br>Last 一组变量中的最后一个<br>Next 一组变量中的下一个变量<br>Prev 一组变量中的上一个<br>Cur 一组变量中的当前变量。</p>
-</blockquote>
-<p>说明：<br>集合添加如下后缀：List、Map、Set<br>数组添加如下后缀：Arr</p>
-<blockquote>
-<p>注意：所有的VO（值对象）统一采用标准的Camel风格编写，所有的DTO（数据传输对象）就按照接口文档中定义的字段名编写。</p>
-</blockquote>
-<p><strong>模型类变量默认规则</strong><br>成员变量前面不要添加m</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AlarmEntity</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String alarmId;</span><br><span class="line">    <span class="keyword">private</span> String alarmContent;</span><br><span class="line">    <span class="keyword">private</span> String alarmTime;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> state;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="7-参数名"><a href="#7-参数名" class="headerlink" title="7.  参数名"></a>7.  参数名</h3><p>参数名以Camel风格编写</p>
-<h3 id="8-局部变量名"><a href="#8-局部变量名" class="headerlink" title="8.  局部变量名"></a>8.  局部变量名</h3><p>局部变量名以Camel风格编写，比起其它类型的名称，局部变量名可以有更为宽松的缩写。<br>虽然缩写更宽松，但还是要避免用单字符进行命名，除了临时变量和循环变量。<br>即使局部变量是final和不可改变的，也不应该把它示为常量，自然也不能用常量的规则去命名它。<br>临时变量<br>临时变量通常被取名为i，j，k，m和n，它们一般用于整型；c，d，e，它们一般用于字符型。<br>如： for (int i = 0; i &lt; len ; i++)，并且它和第一个单词间没有空格。</p>
-<h3 id="9-资源文件命名规范"><a href="#9-资源文件命名规范" class="headerlink" title="9.  资源文件命名规范"></a>9.  资源文件命名规范</h3><h4 id="9-1-资源布局文件（XML文件（layout布局文件））："><a href="#9-1-资源布局文件（XML文件（layout布局文件））：" class="headerlink" title="9.1  资源布局文件（XML文件（layout布局文件））："></a>9.1  资源布局文件（XML文件（layout布局文件））：</h4><p>全部小写，采用下划线命名法<br>1) contentview 命名<br>必须以全部单词小写，单词间以下划线分割，使用名词或名词词组。<br>所有Activity或Fragment的contentView必须与其类名对应，对应规则为：<br>将所有字母都转为小写，将类型和功能调换（也就是后缀变前缀）。<br>例如：activity_main.xml<br>2) Dialog命名：dialog_描述.xml<br>例如：dialog_hint.xml<br>3) PopupWindow命名：ppw_描述.xml<br>例如：ppw_info.xml<br>4) 列表项命名：item_描述.xml<br>例如：item_city.xml<br>5) 包含项命名：include_contentview命名_(位置)描述.xml<br>例如：include_activity_main_head.xml、include_activity_main_bottom.xml<br>或者 include_head.xml、include_bottom.xml</p>
-<h4 id="9-2-layout中的id命名"><a href="#9-2-layout中的id命名" class="headerlink" title="9.2  layout中的id命名"></a>9.2  layout中的id命名</h4><p>使用layout文件名称缩写作前缀+逻辑名称+view缩写<br>如：布局文件名为：activity_login.xml, 用户名对应资源的id可以为：al_username_tv</p>
-<h4 id="9-3-values中name命名"><a href="#9-3-values中name命名" class="headerlink" title="9.3  values中name命名"></a>9.3  values中name命名</h4><p>1) strings的name命名使用下划线命名法，采用以下规则：模块名+描述+逻辑名称 / 逻辑名称<br>如：login_label_username或直接使用 username<br>2) colors的name命名使用下划线命名法，采用以下规则：模块名+逻辑名称+颜色分类 / 颜色<br>如：login_backgroud_light、login_backgroud_dark 或 white<br>3) styles中的style标签中的name使用Pascal命名法，item标签中的name使用Camel命名法，采用以下规则：模块名+逻辑名称<br>如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Base application theme. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.NoActionBar"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">    <span class="comment">&lt;!-- Customize your theme here. --&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/colorPrimary<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/colorPrimaryDark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorAccent"</span>&gt;</span>@color/colorAccent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:dialogTheme"</span>&gt;</span>@style/Base.Dialog<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:background"</span>&gt;</span>@null<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowBackground"</span>&gt;</span>@android:color/transparent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="9-4-资源文件（图片drawable文件夹下）："><a href="#9-4-资源文件（图片drawable文件夹下）：" class="headerlink" title="9.4  资源文件（图片drawable文件夹下）："></a>9.4  资源文件（图片drawable文件夹下）：</h4><p>全部小写，采用下划线命名法，加前缀区分<br>命名模式：可加后缀 _small 表示小图, <em>big 表示大图，逻辑名称可由多个单词加下划线组成，采用以下规则：<br>用途</em>模块名<em>逻辑名称、用途</em>模块名<em>颜色、用途</em>逻辑名称、用途_颜色<br>说明：用途也指控件类型（具体见UI控件缩写表）<br>例如：</p>
-<blockquote>
-<p>btn_main_home.png 按键<br>divider_maket_white.png 分割线<br>ic_edit.png 图标<br>bg_main.png 背景<br>btn_red.png 红色按键<br>btn_red_big.png 红色大按键<br>ic_head_small.png 小头像<br>bg_input.png 输入框背景<br>divider_white.png 白色分割线</p>
-</blockquote>
-<p>如果有多种形态如按钮等除外如 btn_xx.xml（selector）</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>btn_xx</td>
-<td>按钮图片使用btn_整体效果（selector）</td>
-</tr>
-<tr>
-<td>btn_xx_normal</td>
-<td>按钮图片使用btn_正常情况效果</td>
-</tr>
-<tr>
-<td>btn_xx_pressed</td>
-<td>按钮图片使用btn_点击时候效果</td>
-</tr>
-<tr>
-<td>btn_xx_focused</td>
-<td>state_focused聚焦效果</td>
-</tr>
-<tr>
-<td>btn_xx_disabled</td>
-<td>btn_xx_disabled state_enabled (false)不可用效果</td>
-</tr>
-<tr>
-<td>btn_xx_checked</td>
-<td>state_checked选中效果</td>
-</tr>
-<tr>
-<td>btn_xx_selected</td>
-<td>state_selected选中效果</td>
-</tr>
-<tr>
-<td>btn_xx_hovered</td>
-<td>state_hovered悬停效果</td>
-</tr>
-<tr>
-<td>btn_xx_checkable</td>
-<td>state_checkable可选效果</td>
-</tr>
-<tr>
-<td>btn_xx_activated</td>
-<td>state_activated激活的</td>
-</tr>
-<tr>
-<td>btn_xx_window_focused</td>
-<td>state_window_focused</td>
-</tr>
-<tr>
-<td>bg_head</td>
-<td>背景图片使用bg_功能_说明</td>
-</tr>
-<tr>
-<td>def_search_cell</td>
-<td>默认图片使用def_功能_说明</td>
-</tr>
-<tr>
-<td>ic_more_help</td>
-<td>图标图片使用ic_功能_说明</td>
-</tr>
-<tr>
-<td>seg_list_line</td>
-<td>具有分隔特征的图片使用seg_功能_说明</td>
-</tr>
-<tr>
-<td>sel_ok</td>
-<td>选择图标使用sel_功能_说明</td>
-</tr>
-</tbody>
-</table>
-<h4 id="9-5-动画文件（anim文件夹下）："><a href="#9-5-动画文件（anim文件夹下）：" class="headerlink" title="9.5 动画文件（anim文件夹下）："></a>9.5 动画文件（anim文件夹下）：</h4><p>全部小写，采用下划线命名法，加前缀区分。<br>具体动画采用以下规则：模块名_逻辑名称 / 逻辑名称<br>refresh_progress.xml<br>market_cart_add.xml<br>market_cart_remove.xml</p>
-<p><strong>普通的tween动画采用如下表格中的命名方式</strong><br>// 前面为动画的类型，后面为方向</p>
-<table>
-<thead>
-<tr>
-<th>动画命名例子</th>
-<th>规范写法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>fade_in</td>
-<td>淡入</td>
-</tr>
-<tr>
-<td>fade_out</td>
-<td>淡出</td>
-</tr>
-<tr>
-<td>push_down_in</td>
-<td>从下方推入</td>
-</tr>
-<tr>
-<td>push_down_out</td>
-<td>从下方推出</td>
-</tr>
-<tr>
-<td>push_left</td>
-<td>推向左方</td>
-</tr>
-<tr>
-<td>slide_in_from_top</td>
-<td>从头部滑动进入</td>
-</tr>
-<tr>
-<td>zoom_enter</td>
-<td>变形进入</td>
-</tr>
-<tr>
-<td>slide_in</td>
-<td>滑动进入</td>
-</tr>
-<tr>
-<td>shrink_to_middle</td>
-<td>中间缩小</td>
-</tr>
-</tbody>
-</table>
-<p><strong>表1 常用UI控件的缩写</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">控件</th>
-<th>布局文件中缩写</th>
-<th>代码中缩写</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">LinearLayout</td>
-<td>xxx_ll</td>
-<td>xxxLLayout</td>
-</tr>
-<tr>
-<td style="text-align:left">RelativeLayout</td>
-<td>xxx_rl</td>
-<td>xxxRLayout</td>
-</tr>
-<tr>
-<td style="text-align:left">FrameLayout</td>
-<td>xx_fl</td>
-<td>xxxFLayout</td>
-</tr>
-<tr>
-<td style="text-align:left">TextView</td>
-<td>xxx_tv</td>
-<td>xxxTv</td>
-</tr>
-<tr>
-<td style="text-align:left">EditText</td>
-<td>xxx_et</td>
-<td>xxxEt</td>
-</tr>
-<tr>
-<td style="text-align:left">Button</td>
-<td>xxx_btn</td>
-<td>xxxBtn</td>
-</tr>
-<tr>
-<td style="text-align:left">ImageView</td>
-<td>xxx_iv</td>
-<td>xxxIv</td>
-</tr>
-<tr>
-<td style="text-align:left">CheckBox</td>
-<td>xxx_chk</td>
-<td>xxxChk</td>
-</tr>
-<tr>
-<td style="text-align:left">RadioButton</td>
-<td>xxx_rbtn</td>
-<td>xxxRbtn</td>
-</tr>
-<tr>
-<td style="text-align:left">ProgressBar</td>
-<td>xxx_pbar</td>
-<td>xxxPbar</td>
-</tr>
-<tr>
-<td style="text-align:left">ListView</td>
-<td>xxx_lv</td>
-<td>xxxLv</td>
-</tr>
-<tr>
-<td style="text-align:left">WebView</td>
-<td>xxx_wv</td>
-<td>xxxWv</td>
-</tr>
-<tr>
-<td style="text-align:left">GridView</td>
-<td>xxx_gv</td>
-<td>xxxGv</td>
-</tr>
-</tbody>
-</table>
-<p><strong>表2 常见的英文单词缩写</strong></p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>缩写</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>icon</td>
-<td>ic （主要用在app的图标）</td>
-</tr>
-<tr>
-<td>color</td>
-<td>cl（主要用于颜色值）</td>
-</tr>
-<tr>
-<td>divider</td>
-<td>di（主要用于分隔线，不仅包括Listview中的divider，还包括普通布局中的线）</td>
-</tr>
-<tr>
-<td>selector</td>
-<td>sl（主要用于某一view多种状态，不仅包括Listview中的selector，还包括按钮的selector）</td>
-</tr>
-<tr>
-<td>average</td>
-<td>avg</td>
-</tr>
-<tr>
-<td>background</td>
-<td>bg（主要用于布局和子布局的背景）</td>
-</tr>
-<tr>
-<td>buffer</td>
-<td>buf</td>
-</tr>
-<tr>
-<td>control</td>
-<td>ctrl</td>
-</tr>
-<tr>
-<td>delete</td>
-<td>del</td>
-</tr>
-<tr>
-<td>document</td>
-<td>doc</td>
-</tr>
-<tr>
-<td>error</td>
-<td>err</td>
-</tr>
-<tr>
-<td>escape</td>
-<td>esc</td>
-</tr>
-<tr>
-<td>increment</td>
-<td>inc</td>
-</tr>
-<tr>
-<td>infomation</td>
-<td>info</td>
-</tr>
-<tr>
-<td>initial</td>
-<td>init</td>
-</tr>
-<tr>
-<td>image</td>
-<td>img</td>
-</tr>
-<tr>
-<td>Internationalization</td>
-<td>I18N</td>
-</tr>
-<tr>
-<td>length</td>
-<td>len</td>
-</tr>
-<tr>
-<td>library</td>
-<td>lib</td>
-</tr>
-<tr>
-<td>message</td>
-<td>msg</td>
-</tr>
-<tr>
-<td>password</td>
-<td>pwd</td>
-</tr>
-<tr>
-<td>position</td>
-<td>pos</td>
-</tr>
-<tr>
-<td>server</td>
-<td>srv</td>
-</tr>
-<tr>
-<td>string</td>
-<td>str</td>
-</tr>
-<tr>
-<td>temp</td>
-<td>tmp</td>
-</tr>
-<tr>
-<td>window</td>
-<td>win</td>
-</tr>
-</tbody>
-</table>
-<p>程序中使用单词缩写原则：不要用缩写，除非该缩写是约定俗成的。</p>
 
-          
+Android 命名规范1.  标识符通用的规则标识符命名法主要有四种:
+1) Camel(骆驼)命名法：除首单词外，其余所有单词的第一个字母大写，如：fooBar;2) Pascal命名法:所有单词的第一个字
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/26/Android命名规范/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1256,7 +684,19 @@ Stuff like _this_ works too.
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-09T21:28:23+08:00">
+                2018-05-09
+              </time>
             
           </span>
 
@@ -1268,9 +708,39 @@ Stuff like _this_ works too.
 
           
           
+             <span id="/2017/01/24/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
           
 
           
@@ -1290,17 +760,15 @@ Stuff like _this_ works too.
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/24/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1423,6 +891,13 @@ Stuff like _this_ works too.
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -1452,7 +927,7 @@ Stuff like _this_ works too.
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a><span>&nbsp;&nbsp;<i class="fa fa-bomb"></i></span><span id="showDays"></span></div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a><span>&nbsp;&nbsp;<i class="fa fa-bomb"></i></span><span id="showDays"></span></div>
 
 
 
@@ -1495,11 +970,6 @@ Stuff like _this_ works too.
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
     
@@ -1578,6 +1048,13 @@ Stuff like _this_ works too.
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
   
 
   
@@ -1622,7 +1099,446 @@ Stuff like _this_ works too.
 
   
 
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
 
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("OumHpe6LcllBvjes6glaM2Bv-gzGzoHsz", "aowh65mvNP7nKwPPjIjFSaNQ");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
 
 
 
@@ -1631,8 +1547,6 @@ Stuff like _this_ works too.
   
 
   
-
-  
   
 
   
@@ -1641,5 +1555,117 @@ Stuff like _this_ works too.
 
   
 
+
+  
+    
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("OumHpe6LcllBvjes6glaM2Bv-gzGzoHsz", "aowh65mvNP7nKwPPjIjFSaNQ");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
 </body>
 </html>
