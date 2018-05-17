@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://sanwuwy.github.io/"/>
   <updated>2018-05-11T10:15:28.359Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://sanwuwy.github.io/</id>
   
   <author>
     <name>sanwuwy</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Markdown语法简介</title>
-    <link href="http://yoursite.com/%E5%B7%A5%E5%85%B7/Markdown/Markdown%E8%AF%AD%E6%B3%95%E7%AE%80%E4%BB%8B/"/>
-    <id>http://yoursite.com/工具/Markdown/Markdown语法简介/</id>
+    <link href="http://sanwuwy.github.io/%E5%B7%A5%E5%85%B7/Markdown/Markdown%E8%AF%AD%E6%B3%95%E7%AE%80%E4%BB%8B/"/>
+    <id>http://sanwuwy.github.io/工具/Markdown/Markdown语法简介/</id>
     <published>2018-05-09T13:35:50.000Z</published>
     <updated>2018-05-11T10:15:28.359Z</updated>
     
@@ -32,19 +32,19 @@
     
     </summary>
     
-      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://sanwuwy.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
-      <category term="Markdown" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/Markdown/"/>
+      <category term="Markdown" scheme="http://sanwuwy.github.io/categories/%E5%B7%A5%E5%85%B7/Markdown/"/>
     
     
-      <category term="Markdown" scheme="http://yoursite.com/tags/Markdown/"/>
+      <category term="Markdown" scheme="http://sanwuwy.github.io/tags/Markdown/"/>
     
   </entry>
   
   <entry>
     <title>Android命名规范</title>
-    <link href="http://yoursite.com/Android/Android%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/"/>
-    <id>http://yoursite.com/Android/Android命名规范/</id>
+    <link href="http://sanwuwy.github.io/Android/Android%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/"/>
+    <id>http://sanwuwy.github.io/Android/Android命名规范/</id>
     <published>2017-04-26T07:50:04.000Z</published>
     <updated>2018-05-11T10:15:04.482Z</updated>
     
@@ -63,12 +63,12 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="http://sanwuwy.github.io/categories/Android/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="http://sanwuwy.github.io/tags/Android/"/>
     
-      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://sanwuwy.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
